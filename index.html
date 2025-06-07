@@ -51,7 +51,7 @@
         }
 
         .nav-container {
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -477,6 +477,45 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-container,
+            .services-container,
+            .stats-container,
+            .footer-container {
+                padding: 0 1rem;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-cards {
+                display: none;
+                /* Hide floating visuals on small screens to prevent layout issues */
+            }
+
+            .about .services-container>div,
+            .contact .services-container>div {
+                grid-template-columns: 1fr !important;
+                /* Force single column in about/contact */
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta-btn {
+                margin-top: 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
         }
     </style>
